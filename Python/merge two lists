@@ -1,0 +1,26 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+#a Python list uses indexes ([i]), while a linked list uses nodes connected by pointers (.next).
+class Solution(object):
+    def mergeTwoLists(self, list1, list2):
+        """
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        if not list1:
+            return list2
+
+        if not list2:
+            return list1
+
+        merge_list=list1
+        while merge_list.next:
+            merge_list=merge_list.next
+
+        merge_list.next=list2
+
+        return list1    
